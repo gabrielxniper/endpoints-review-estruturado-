@@ -1,6 +1,6 @@
 import { UserData } from "../data/UserData";
 import { PostData } from "../data/PostData";
-import { Post } from "../bd";
+import { Post } from "../types/post";
 
 export class PostBusiness {
     private userData = new UserData();

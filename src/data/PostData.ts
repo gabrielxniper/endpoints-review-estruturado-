@@ -1,4 +1,5 @@
-import { posts, Post } from "../bd";
+import { posts } from "../bd";
+import { Post } from "../types/post"
 
 export class PostData{
     public createPost = (newPost: Post) => {
