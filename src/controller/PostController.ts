@@ -3,7 +3,7 @@ import { PostBusiness } from '../business/PostBusiness';
 
 export class PostController { 
     private postBusiness = new PostBusiness()
-    public postValidations = (req: Request, res: Response) =>{
+    public createPost = (req: Request, res: Response) =>{
         try {
         
             const { title, content, authorId } = req.body;

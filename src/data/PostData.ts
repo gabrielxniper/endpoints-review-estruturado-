@@ -17,7 +17,15 @@ export class PostData{
         return posts.find(post => post.id === id);
     }
     public getNextId = (): number => {
-        return posts.length + 1;
+        const allPosts = posts;
+        let highestId = 0;
+        for(let i = 0; i< allPosts.length; i++){
+            if (allPosts[i].id > highestId) {
+                highestId = allPosts[i].id;
+            }
+        }
+        return highestId + 1;
+        
     }
 
     public deletePostById = (id: number) => {
