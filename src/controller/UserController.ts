@@ -72,10 +72,7 @@ export class UserController {
         try {
             const { confirm } = req.query;
             const removedUsers = this.userBusiness.cleanupInactiveUsers(confirm);
-            res.status(200).json({
-                message: "Limpeza de utilizadores inativos concluída.",
-                removedUsers: removedUsers
-            });
+            res.status(200).json({ message: "Limpeza de utilizadores inativos concluída.", removedUsers: removedUsers });
         } catch (error: any) {
             res.status(400).json({ message: error.message });
         }
