@@ -23,13 +23,10 @@ export class UserController {
     public getUserById = (req: Request, res: Response) => {
         try {
             const id = req.params.id;
-
             const user = this.userBusiness.getUserById(id);
-
             res.status(200).json(user);
         }
         catch (error: any) {
-            
             res.status(404).json("Usuário não encontrado");
         }
     }
@@ -72,10 +69,7 @@ export class UserController {
         try {
             const { confirm } = req.query;
             const removedUsers = this.userBusiness.cleanupInactiveUsers(confirm);
-            res.status(200).json({
-                message: "Limpeza de utilizadores inativos concluída.",
-                removedUsers: removedUsers
-            });
+            res.status(200).json({ message: "Limpeza de utilizadores inativos concluída.", removedUsers: removedUsers });
         } catch (error: any) {
             res.status(400).json({ message: error.message });
         }

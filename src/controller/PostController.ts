@@ -5,13 +5,9 @@ export class PostController {
     private postBusiness = new PostBusiness()
     public createPost = (req: Request, res: Response) =>{
         try {
-        
             const { title, content, authorId } = req.body;
-
             const newPost = this.postBusiness.postCreate(title, content, authorId);
-
             res.status(201).send({ message: "Post criado com sucesso!", post: newPost });
-
         } catch (error: any) {
             res.status(400).send({ message: error.message });
         }
