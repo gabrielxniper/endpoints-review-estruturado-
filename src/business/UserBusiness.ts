@@ -103,7 +103,7 @@ export class UserBusiness {
         if (confirm !== 'true') {
             throw new Error("Parâmetro 'confirm=true' é obrigatório para executar a limpeza.");
         }
-        const authorIds = new Set(posts.map(post => post.authorId));
+        const authorIds = new Set(posts.map(post => post.authorId));//set é pra pegar apenas uma vez um determinado id
         const allUsers = users; 
         const inactiveUsers = allUsers.filter(user => user.role !== 'admin' && !authorIds.has(user.id));
         
